@@ -1,9 +1,10 @@
-import './App.css';
+import "./index.css"
+import Body from './components/Body';
 
 function App() {
   return (
     <div>
-        Hello
+        <Body/>
     </div>
   );
 }
