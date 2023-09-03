@@ -14,10 +14,11 @@ const Login = () => {
         </div>
         <form className='p-12 bg-black absolute w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
             <h1 className='font-bold text-3xl py-4'>{isSignForm? "Sign In" : "Sign Up"}</h1>
-            <input type='email' placeholder='email' className='p-4 my-4 w-full bg-gray-900'/>
-            <input type='password' placeholder='password' className='p-4 my-4 w-full bg-gray-900'/>
+            {!isSignForm && <input type='text' placeholder='Username' className='p-4 my-4 w-full bg-gray-900'/>}
+            <input type='email' placeholder='Email' className='p-4 my-4 w-full bg-gray-900'/>
+            <input type='password' placeholder='Password' className='p-4 my-4 w-full bg-gray-900'/>
             <button className='p-4 my-6 bg-red-700 w-full rounded-lg'>{isSignForm? "Sign In" : "Register"}</button>
-            <p className='py-6'>New to Netflix? <span onClick={toggleSignInForm} className='underline cursor-pointer'>Sign Up</span> Now</p>
+            <p className='py-6' onClick={toggleSignInForm}>{isSignForm?" New to Netflix? Sign Up Now" : "Already Registered? Sign In Now!"}</p>
         </form>
     </div>
   )
